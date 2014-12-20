@@ -1,0 +1,22 @@
+{
+  "name": "bedjs",
+  "version": "1.0.0",
+  "description": "Free implementation of BED protocol (https://github.com/bed-project/bed/blob/master/spec.ezdoc)",
+  "main": "./lib/badjs.js",
+  "devDependencies": {
+    "testem": ""
+  },
+  "dependencies": {
+  },
+  "scripts": {
+    "test": "node_modules/testem/testem.js"
+  },
+  "repository": "",
+  "keywords": [
+    "JSON",
+    "BED",
+    "REST"
+  ],
+  "author": "Fernando Tolentino <JoseFernandoTolentino@gmail.com>",
+  "license": "MIT"
+}
