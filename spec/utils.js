@@ -13,11 +13,11 @@ function throwbin() {
 
 			var dec = c.toString();
 			while (dec.length < 3) dec = '0' + dec;
-			buf2.push(dec); 
+			buf2.push(dec);
 
 			var hex = c.toString(16).toUpperCase();
 			while (hex.length < 2) hex = '0' + hex;
-			buf1.push("0x"+hex+",");
+			buf1.push("0x" + hex + ",");
 			buf2.push(hex);
 
 			var bin = c.toString(2);
@@ -29,7 +29,7 @@ function throwbin() {
 			i++;
 		}
 	}
-	var txt=buf1.join(' ') + ' ---  '+ buf2.join(' ');
+	var txt = buf1.join(' ') + ' ---  ' + buf2.join(' ');
 	throw txt;
 }
 
@@ -69,6 +69,13 @@ function bed_expects(expected, actual) {
 }
 
 function json_expects(expected, actual) {
+	if (actual instanceof Uint8Array) {
+		var a = [];
+
+		for (var i = 0; i < actual.length; i++)
+			a.push(actual[i]);
+		actual = a;
+	}
 	expected = JSON.stringify(expected);
 	actual = JSON.stringify(actual);
 
